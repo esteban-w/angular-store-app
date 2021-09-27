@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GeneralModule } from './general/general.module';
 import { CatalogModule } from './catalog/catalog.module';
 import { CheckoutModule } from './checkout/checkout.module';
 
@@ -15,6 +16,7 @@ import { CheckoutModule } from './checkout/checkout.module';
     AppRoutingModule,
     CatalogModule,
     CheckoutModule,
+    GeneralModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
