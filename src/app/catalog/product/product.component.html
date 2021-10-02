@@ -1,2 +1,14 @@
-<p>product works!</p>
-<p>Product ID: {{productId}}</p>
+<h1>Product</h1>
+<div>
+  <img src="{{product.url}}" width="400" height="600" alt="{{product.name}}"/>
+  <div>
+    <h2>{{product.name}}</h2>
+    <p>{{product.price}}</p>
+    <p>{{product.description}}</p>
+    <form>
+      <input type="number" min="1" pattern="\d"/>
+      <button>Add to cart</button>
+    </form>
+    <a routerLink="/">Back to product list</a>
+  </div>
+</div>
