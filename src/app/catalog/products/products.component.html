@@ -2,7 +2,7 @@
 <ul>
   <li *ngFor="let product of productList">
     <div>
-      <a href="#">
+      <a routerLink="product/{{product.id}}">
         <img src="{{product.url}}" width="400" height="600" alt="{{product.name}}"/>
       </a>
     </div>
