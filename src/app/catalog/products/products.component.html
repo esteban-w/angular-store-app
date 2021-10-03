@@ -8,8 +8,8 @@
     </div>
     <p>{{product.name}}</p>
     <p>{{product.price}}</p>
-    <form>
-      <input type="number" min="1" pattern="\d"/>
+    <form (submit)="onSubmit($event, product, itemAmount.value)">
+      <input #itemAmount type="number" min="1" value="1" pattern="\d"/>
       <button>Add to cart</button>
     </form>
   </li>
