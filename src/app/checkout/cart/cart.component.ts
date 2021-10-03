@@ -10,6 +10,10 @@ import { CartItem } from '../models/cart';
 export class CartComponent implements OnInit {
   items: CartItem[] = [];
   cartTotal: number = 0;
+  customerName: string = '';
+  customerEmail: string = '';
+  customerAddress: string = '';
+  customerCreditCard: string = '';
 
   constructor(
     private cartService: CartService
@@ -18,6 +22,10 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.items = Object.values(this.cartService.getItems());
     this.cartTotal = this.cartService.getTotal();
+  }
+
+  onSubmit() {
+    // create order
   }
 
 }
