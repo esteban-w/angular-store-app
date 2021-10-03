@@ -9,7 +9,7 @@ import { Product } from '../models/product';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  product: Product = {description: "", name: "", price: 0, url: ""};
+  product: Product = {id:-1, description: "", name: "", price: 0, url: ""};
 
   constructor(
     private route: ActivatedRoute,
