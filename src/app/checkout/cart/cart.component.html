@@ -1,1 +1,40 @@
-<p>cart works!</p>
+<h1>Cart</h1>
+
+<p *ngIf="items.length === 0">
+  You have not added any items yet
+</p>
+
+<ng-template [ngIf]="items.length">
+  <section>
+    <h2>Items</h2>
+    <ul *ngFor="let item of items">
+      <li>
+        <img src="{{item.product.url}}" width="400" height="600" alt="{{item.product.name}}"/>
+        <div>
+          <h3>{{item.product.name}}</h3>
+          <p>Price: {{item.product.price}}</p>
+          <div>
+            Amount: {{item.amount}}
+          </div>
+        </div>
+      </li>
+    </ul>
+    <p>Total: {{cartTotal}}</p>
+  </section>
+  <section>
+    <h2>Order</h2>
+    <form>
+      <label>Full name</label>
+      <input type="text">
+
+      <label>Address</label>
+      <input type="text">
+
+      <label>Credit card number</label>
+      <input type="text">
+      <small>We'll never share your payment details with anyone.</small>
+
+      <button>Place order</button>
+    </form>
+  </section>
+</ng-template>
