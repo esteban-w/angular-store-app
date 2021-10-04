@@ -5,10 +5,7 @@
     <h2>{{product.name}}</h2>
     <p>{{product.price}}</p>
     <p>{{product.description}}</p>
-    <form (submit)="onSubmit($event, product, itemAmount.value)">
-      <input #itemAmount type="number" min="1" pattern="\d" value="1"/>
-      <button>Add to cart</button>
-    </form>
+    <app-add-product [product]="product"></app-add-product>
     <a routerLink="/">Back to product list</a>
   </div>
 </div>
