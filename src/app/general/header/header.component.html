@@ -1,4 +1,11 @@
 <nav>
-  <a routerLink="/">Products</a>
-  <a routerLink="/cart">Cart</a>
+  <ul>
+    <li>
+      <a routerLink="/">Products</a>
+    </li>
+    <li>
+      <a routerLink="/cart">Cart</a>
+      <span>{{cartCount | async}}</span>
+    </li>
+  </ul>
 </nav>

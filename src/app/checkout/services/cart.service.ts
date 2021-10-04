@@ -9,15 +9,21 @@ import { Subject } from 'rxjs';
 export class CartService {
   cart: Cart = { items: {}, total: 0};
   cartItems$: Subject<object> = new Subject<object>();
+  cartCount$: Subject<number> = new Subject<number>();
 
   constructor() {
     this.cartItems$.subscribe((items: object) => {
       let cartTotal = 0;
+      let cartCount = 0;
+
       Object.values(items).forEach((item: CartItem) => {
         const itemTotal = item.product.price * item.amount;
         cartTotal += itemTotal;
+        cartCount += item.amount;
       })
+
       this.cart.total = cartTotal;
+      this.cartCount$.next(cartCount);
     })
   }
 
