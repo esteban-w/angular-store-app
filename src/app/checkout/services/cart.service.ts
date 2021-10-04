@@ -12,11 +12,12 @@ export class CartService {
 
   constructor() {
     this.cartItems$.subscribe((items: object) => {
-      this.cart.total = 0;
+      let cartTotal = 0;
       Object.values(items).forEach((item: CartItem) => {
         const itemTotal = item.product.price * item.amount;
-        this.cart.total += itemTotal;
+        cartTotal += itemTotal;
       })
+      this.cart.total = cartTotal;
     })
   }
 
