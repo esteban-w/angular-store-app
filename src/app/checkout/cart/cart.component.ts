@@ -3,6 +3,7 @@ import { CartService } from '../services/cart.service';
 import { CartItem } from '../models/cart';
 import { Product } from '../../catalog/models/product';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cart',
@@ -10,17 +11,17 @@ import { Observable } from 'rxjs';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  items: CartItem[] = [];
+  items: Observable<CartItem[]>;
   cartTotal: Observable<number>;
 
   constructor(
     private cartService: CartService
   ) {
     this.cartTotal = this.cartService.cartTotal$;
+    this.items = this.cartService.cartItems$.pipe(map(items => Object.values(items)));
   }
 
   ngOnInit(): void {
-    this.items = Object.values(this.cartService.getItems());
   }
 
   onSubmit(event: Event, product: Product, amount: string) {

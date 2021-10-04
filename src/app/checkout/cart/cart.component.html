@@ -1,13 +1,13 @@
 <h1>Cart</h1>
 
-<p *ngIf="items.length === 0">
+<p *ngIf="(items | async)?.length === 0">
   You have not added any items yet
 </p>
 
-<ng-template [ngIf]="items.length">
+<ng-template [ngIf]="(items | async)?.length">
   <section>
     <h2>Items</h2>
-    <ul *ngFor="let item of items">
+    <ul *ngFor="let item of (items | async)">
       <li>
         <img src="{{item.product.url}}" width="400" height="600" alt="{{item.product.name}}"/>
         <div>

@@ -8,7 +8,7 @@ import { Subject, BehaviorSubject } from 'rxjs';
 })
 export class CartService {
   cart: Cart = { items: {}, total: 0};
-  cartItems$: Subject<object> = new Subject<object>();
+  cartItems$: BehaviorSubject<object> = new BehaviorSubject<object>({});
   cartCount$: Subject<number> = new Subject<number>();
   cartTotal$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
@@ -29,15 +29,11 @@ export class CartService {
     })
   }
 
-  getItems() {
-    return this.cart.items;
-  }
-
-  getTotal() {
-    return this.cart.total;
-  }
-
   updateItem(product: Product, amount: number) {
+    if (amount === 0) {
+      return this.removeItem(product);
+    }
+
     this.cart.items[product.id] = {product: product, amount: amount};
     this.cartItems$.next(this.cart.items);
     return this.cart.items[product.id];
@@ -52,4 +48,12 @@ export class CartService {
 
     return this.updateItem(product, amount);
   }
+
+  removeItem(product: Product) {
+    if (this.cart.items[product.id]) {
+      delete this.cart.items[product.id];
+      this.cartItems$.next(this.cart.items);
+    }
+  }
+
 }
