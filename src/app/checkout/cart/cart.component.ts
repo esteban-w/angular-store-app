@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { CartItem } from '../models/cart';
+import { Product } from '../../catalog/models/product';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -9,15 +11,21 @@ import { CartItem } from '../models/cart';
 })
 export class CartComponent implements OnInit {
   items: CartItem[] = [];
-  cartTotal: number = 0;
+  cartTotal: Observable<number>;
 
   constructor(
     private cartService: CartService
-  ) { }
+  ) {
+    this.cartTotal = this.cartService.cartTotal$;
+  }
 
   ngOnInit(): void {
     this.items = Object.values(this.cartService.getItems());
-    this.cartTotal = this.cartService.getTotal();
+  }
+
+  onSubmit(event: Event, product: Product, amount: string) {
+    event.preventDefault();
+    this.cartService.updateItem(product, parseInt(amount));
   }
 
 }

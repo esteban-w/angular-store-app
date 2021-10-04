@@ -13,13 +13,20 @@
         <div>
           <h3>{{item.product.name}}</h3>
           <p>Price: {{item.product.price}}</p>
-          <div>
-            Amount: {{item.amount}}
-          </div>
+          <form (submit)="onSubmit($event, item.product, productAmount.value)">
+            <label for="{{item.product.id}}-amount">Amount:</label>
+            <input #productAmount
+                   id="{{item.product.id}}-amount"
+                   type="number"
+                   value="{{item.amount}}"
+                   min="0"
+                   pattern="\d"
+                   required/>
+          </form>
         </div>
       </li>
     </ul>
-    <p>Total: {{cartTotal}}</p>
+    <p>Total: {{cartTotal | async}}</p>
   </section>
   <section>
     <h2>Order</h2>

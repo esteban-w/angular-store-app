@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../catalog/models/product';
 import { Cart, CartItem } from '../models/cart';
-import { Subject } from 'rxjs';
+import { Subject, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,7 @@ export class CartService {
   cart: Cart = { items: {}, total: 0};
   cartItems$: Subject<object> = new Subject<object>();
   cartCount$: Subject<number> = new Subject<number>();
+  cartTotal$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   constructor() {
     this.cartItems$.subscribe((items: object) => {
@@ -23,6 +24,7 @@ export class CartService {
       })
 
       this.cart.total = cartTotal;
+      this.cartTotal$.next(this.cart.total);
       this.cartCount$.next(cartCount);
     })
   }
