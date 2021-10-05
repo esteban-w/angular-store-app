@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../catalog/models/product';
 import { Cart, CartItem } from '../models/cart';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { Subject, BehaviorSubject } from 'rxjs';
 export class CartService {
   cart: Cart = { items: {}, total: 0};
   cartItems$: BehaviorSubject<object> = new BehaviorSubject<object>({});
-  cartCount$: Subject<number> = new Subject<number>();
+  cartCount$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   cartTotal$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   constructor() {

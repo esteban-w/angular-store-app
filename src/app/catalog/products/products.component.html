@@ -7,9 +7,11 @@
           <img src="{{product.url}}" width="400" height="600" alt="{{product.name}}"/>
         </a>
       </div>
-      <p>{{product.name}}</p>
-      <p>{{product.price}}</p>
-      <app-add-product [product]="product"></app-add-product>
+      <div>
+        <h3>{{product.name}}</h3>
+        <p>{{product.price | currency}}</p>
+        <app-add-product [product]="product"></app-add-product>
+      </div>
     </li>
   </ul>
 </section>

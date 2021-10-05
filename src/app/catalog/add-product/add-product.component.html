@@ -1,4 +1,7 @@
 <form (submit)="onSubmit($event, itemAmount.value)">
-  <input #itemAmount type="number" min="1" value="1" pattern="\d" required/>
+  <fieldset>
+    <label class="sr-only">Product amount</label>
+    <input #itemAmount type="number" min="1" value="1" pattern="\d" required/>
+  </fieldset>
   <button>Add to cart</button>
 </form>

@@ -1,9 +1,9 @@
-<section *ngIf="!order">
+<section class="main-content" *ngIf="!order">
   <h1>You have not placed any orders!</h1>
   <a routerLink="/">Check out our catalog!</a>
 </section>
 
-<section *ngIf="order">
+<section class="main-content" *ngIf="order">
   <h1>Success! Your order has been placed!</h1>
   <h2>Thanks for shopping with us</h2>
   <p>Your order details:</p>
@@ -22,15 +22,18 @@
   </dl>
 
   <p>Products ordered:</p>
-  <ul *ngFor="let item of order.items">
-    <li>
-      <img src="{{item.product.url}}" width="400" height="600" alt="{{item.product.name}}"/>
+  <ul class="cart-items">
+    <li class="cart-item" *ngFor="let item of order.items">
       <div>
-        <p>{{item.product.name}}</p>
+        <img src="{{item.product.url}}" width="400" height="600" alt="{{item.product.name}}"/>
+      </div>
+      <div>
+        <h3>{{item.product.name}}</h3>
         <p>Amount: {{item.amount}}</p>
+        <p>Price: {{item.product.price | currency}}</p>
       </div>
     </li>
   </ul>
-  <p><strong>Total: {{order.total}}</strong></p>
+  <p><strong>Total: {{order.total | currency}}</strong></p>
   <a routerLink="/">Continue shopping</a>
 </section>

@@ -6,7 +6,7 @@
       </li>
       <li>
         <a routerLink="/cart">Cart</a>
-        <span>{{cartCount | async}}</span>
+        <span class="cart-counter" *ngIf="cartCount | async">{{cartCount | async}}</span>
       </li>
     </ul>
   </nav>

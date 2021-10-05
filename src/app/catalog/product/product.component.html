@@ -6,7 +6,7 @@
     </div>
     <article>
       <h2>{{product?.name}}</h2>
-      <p>{{product?.price}}</p>
+      <p>{{product?.price | currency}}</p>
       <p>{{product?.description}}</p>
       <app-add-product [product]="product"></app-add-product>
       <a routerLink="/">Back to product list</a>

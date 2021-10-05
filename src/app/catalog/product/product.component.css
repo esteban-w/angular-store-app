@@ -1,8 +1,21 @@
 section > div {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
 }
 
 section > div > * {
-  width: 50%;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  section > div > * {
+    padding-right: 15px;
+    width: 50%;
+  }
+}
+
+section > div > article a:last-child {
+  display: inline-block;
+  margin-top: 15px;
 }

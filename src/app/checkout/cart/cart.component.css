@@ -1,7 +1,20 @@
 .cart-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
-.cart-container > * {
-  width: 50%;
+.cart-container > section {
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .cart-container > section {
+    padding-right: 15px;
+    width: 50%;
+  }
+}
+
+.cart-container > section:first-child ul li input {
+  width: 70px;
 }

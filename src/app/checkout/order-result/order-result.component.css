@@ -1,0 +1,13 @@
+section dl {
+  margin-left: 15px;
+  padding-bottom: 10px;
+}
+
+section dt {
+  font-weight: 500;
+}
+
+section dd {
+  margin-left: 15px;
+  margin-bottom: 5px;
+}

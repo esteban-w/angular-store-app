@@ -17,16 +17,43 @@ ul {
   list-style: none;
 }
 
+fieldset {
+  padding-bottom: 15px;
+}
+
+label {
+  display: block;
+}
+
 input {
   border: 1px solid #ddd;
+  border-radius: 3px;
   padding: 10px 15px;
 }
 
+input.ng-invalid.ng-dirty {
+  border-color: red;
+}
+
 button {
-  background-color: dodgerblue;
+  background-color: royalblue;
   border-radius: 3px;
   cursor: pointer;
+  color: white;
   padding: 10px 15px;
+}
+
+button[disabled] {
+  opacity: 0.7;
+}
+
+a {
+  color: royalblue;
+  font-weight: bold;
+}
+
+strong {
+  font-weight: bold;
 }
 
 img {
@@ -36,14 +63,21 @@ img {
 
 h1 {
   font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 h2 {
   font-size: 1.5rem;
+  margin-bottom: 7px;
 }
 
 h3 {
   font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+p {
+  margin-bottom: 5px;
 }
 
 small {
@@ -51,5 +85,58 @@ small {
 }
 
 .main-content {
-  padding: 30px 0;
+    padding: 30px 15px;
+}
+
+.sr-only {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  z-index: -1000;
+}
+
+.cart-items {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item > div:first-child {
+  margin-right: 15px;
+  width: 30%;
+}
+
+.cart-counter {
+  background-color: #eee;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  height: 24px;
+  line-height: 24px;
+  margin-left: 5px;
+  position: absolute;
+  text-align: center;
+  width: 24px;
+}
+
+.input-error {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 3px 3px 4px rgba(204,204,204,0.7);
+  display: none;
+  font-size: 0.9rem;
+  margin-right: 15px;
+  padding: 10px 13px;
+  position: absolute;
+  z-index: 1;
+}
+
+input.ng-invalid:focus + .input-error {
+  display: block;
 }
