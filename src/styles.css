@@ -63,16 +63,19 @@ img {
 
 h1 {
   font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
 h2 {
   font-size: 1.5rem;
+  font-weight: bold;
   margin-bottom: 7px;
 }
 
 h3 {
   font-size: 1.2rem;
+  font-weight: bold;
   margin-bottom: 5px;
 }
 
