@@ -4,7 +4,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { AddProductComponent } from './add-product/add-product.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,8 @@ import { AddProductComponent } from './add-product/add-product.component';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ]
 })
 export class CatalogModule { }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
+import { Observable, combineLatest } from "rxjs";
+import { map } from 'rxjs/operators'
 
 @Component({
   selector: 'app-product',
@@ -9,17 +11,20 @@ import { Product } from '../models/product';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  product: Product = {id:-1, description: "", name: "", price: 0, url: ""};
+  product$: Observable<Product | undefined>;
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService
-  ) { }
+  ) {
+    this.product$ = combineLatest([this.productService.products$, this.route.params]).pipe(
+      map(([products, params]) => {
+        return products.find(product => product.id == params.id)
+      })
+    );
+  }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.product = this.productService.getProductById(params.id);
-    })
   }
 
 }

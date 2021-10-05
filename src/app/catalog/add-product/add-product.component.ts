@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-  @Input() product: Product | undefined;
+  @Input() product: Product | undefined | null;
 
   constructor(
     private cartService: CartService,
