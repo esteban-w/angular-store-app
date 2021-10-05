@@ -1,4 +1,4 @@
 <form (submit)="onSubmit($event, itemAmount.value)">
-  <input #itemAmount type="number" min="1" value="1" pattern="\d"/>
+  <input #itemAmount type="number" min="1" value="1" pattern="\d" required/>
   <button>Add to cart</button>
 </form>
