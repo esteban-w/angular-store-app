@@ -1,4 +1,5 @@
 # Angular Store App
+This is a store application project created with Angular, to implement everything learned during the Angular lessons contained in the 'Fullstack Javascript Developer' program.
 
 ## Dependencies
 - Node >= version 12
