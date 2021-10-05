@@ -36,7 +36,7 @@ input.ng-invalid.ng-dirty {
 }
 
 button {
-  background-color: royalblue;
+  background-color: #0058f9;
   border-radius: 3px;
   cursor: pointer;
   color: white;
@@ -48,7 +48,7 @@ button[disabled] {
 }
 
 a {
-  color: royalblue;
+  color: #0058f9;
   font-weight: bold;
 }
 
