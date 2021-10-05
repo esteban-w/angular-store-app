@@ -56,4 +56,8 @@ export class CartService {
     }
   }
 
+  emptyCart() {
+    Object.values(this.cart.items).forEach(item => this.removeItem(item.product))
+  }
+
 }

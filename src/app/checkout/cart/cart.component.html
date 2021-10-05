@@ -30,6 +30,6 @@
   </section>
   <section>
     <h2>Order</h2>
-    <app-order></app-order>
+    <app-order [items]="(items | async)" [total]="(cartTotal | async)"></app-order>
   </section>
 </ng-template>
