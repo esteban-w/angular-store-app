@@ -1,0 +1,26 @@
+section ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section ul li {
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+section ul li img {
+  height: auto;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  section ul li {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  section ul li {
+    width: 33%;
+  }
+}

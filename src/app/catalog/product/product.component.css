@@ -1,0 +1,8 @@
+section > div {
+  align-items: center;
+  display: flex;
+}
+
+section > div > * {
+  width: 50%;
+}

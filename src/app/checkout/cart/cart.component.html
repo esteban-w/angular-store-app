@@ -1,35 +1,37 @@
-<h1>Cart</h1>
+<section class="main-content">
+  <h1>Cart</h1>
 
-<p *ngIf="(items | async)?.length === 0">
-  You have not added any items yet
-</p>
+  <p *ngIf="(items | async)?.length === 0">
+    You have not added any items yet
+  </p>
 
-<ng-template [ngIf]="(items | async)?.length">
-  <section>
-    <h2>Items</h2>
-    <ul *ngFor="let item of (items | async)">
-      <li>
-        <img src="{{item.product.url}}" width="400" height="600" alt="{{item.product.name}}"/>
-        <div>
-          <h3>{{item.product.name}}</h3>
-          <p>Price: {{item.product.price}}</p>
-          <form (submit)="onSubmit($event, item.product, productAmount.value)">
-            <label for="{{item.product.id}}-amount">Amount:</label>
-            <input #productAmount
-                   id="{{item.product.id}}-amount"
-                   type="number"
-                   value="{{item.amount}}"
-                   min="0"
-                   pattern="\d"
-                   required/>
-          </form>
-        </div>
-      </li>
-    </ul>
-    <p>Total: {{cartTotal | async}}</p>
-  </section>
-  <section>
-    <h2>Order</h2>
-    <app-order [items]="(items | async)" [total]="(cartTotal | async)"></app-order>
-  </section>
-</ng-template>
+  <div class="cart-container" *ngIf="(items | async)?.length">
+    <section>
+      <h2>Items</h2>
+      <ul *ngFor="let item of (items | async)">
+        <li>
+          <img src="{{item.product.url}}" width="400" height="600" alt="{{item.product.name}}"/>
+          <div>
+            <h3>{{item.product.name}}</h3>
+            <p>Price: {{item.product.price}}</p>
+            <form (submit)="onSubmit($event, item.product, productAmount.value)">
+              <label for="{{item.product.id}}-amount">Amount:</label>
+              <input #productAmount
+                     id="{{item.product.id}}-amount"
+                     type="number"
+                     value="{{item.amount}}"
+                     min="0"
+                     pattern="\d"
+                     required/>
+            </form>
+          </div>
+        </li>
+      </ul>
+      <p>Total: {{cartTotal | async}}</p>
+    </section>
+    <section>
+      <h2>Order</h2>
+      <app-order [items]="(items | async)" [total]="(cartTotal | async)"></app-order>
+    </section>
+  </div>
+</section>

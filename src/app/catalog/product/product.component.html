@@ -1,11 +1,15 @@
-<h1>Product</h1>
-<div *ngFor="let product of [product$ | async]">
-  <img src="{{product?.url}}" width="400" height="600" alt="{{product?.name}}"/>
-  <div>
-    <h2>{{product?.name}}</h2>
-    <p>{{product?.price}}</p>
-    <p>{{product?.description}}</p>
-    <app-add-product [product]="product"></app-add-product>
-    <a routerLink="/">Back to product list</a>
+<section class="main-content">
+  <h1>Product</h1>
+  <div *ngFor="let product of [product$ | async]">
+    <div>
+      <img src="{{product?.url}}" width="400" height="600" alt="{{product?.name}}"/>
+    </div>
+    <article>
+      <h2>{{product?.name}}</h2>
+      <p>{{product?.price}}</p>
+      <p>{{product?.description}}</p>
+      <app-add-product [product]="product"></app-add-product>
+      <a routerLink="/">Back to product list</a>
+    </article>
   </div>
-</div>
+</section>

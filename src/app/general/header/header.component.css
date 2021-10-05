@@ -1,0 +1,18 @@
+header {
+  background-color: #ddd;
+}
+
+header nav {
+  padding: 20px 15px;
+  margin: auto;
+  max-width: 1024px;
+  width: 100%;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li {
+  margin-right: 10px;
+}

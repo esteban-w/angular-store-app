@@ -1,0 +1,7 @@
+.cart-container {
+  display: flex;
+}
+
+.cart-container > * {
+  width: 50%;
+}
