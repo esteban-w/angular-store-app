@@ -4,7 +4,7 @@
 - Node >= version 12
 
 ## Setting up
-- Install all required dependencies by running: `npm install` from the project's root folder.
+Install all required dependencies by running: `npm install` from the project's root folder.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
