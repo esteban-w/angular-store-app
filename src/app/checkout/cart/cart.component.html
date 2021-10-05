@@ -2,7 +2,7 @@
   <h1>Cart</h1>
 
   <p *ngIf="(items | async)?.length === 0">
-    You have not added any items yet
+    Your cart is currently empty.
   </p>
 
   <div class="cart-container" *ngIf="(items | async)?.length">
