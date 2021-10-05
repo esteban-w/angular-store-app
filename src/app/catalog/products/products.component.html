@@ -8,7 +8,9 @@
         </a>
       </div>
       <div>
-        <h3>{{product.name}}</h3>
+        <h3>
+          <a routerLink="product/{{product.id}}">{{product.name}}</a>
+        </h3>
         <p>{{product.price | currency}}</p>
         <app-add-product [product]="product"></app-add-product>
       </div>

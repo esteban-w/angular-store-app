@@ -11,10 +11,16 @@
       <ul class="cart-items">
         <li class="cart-item" *ngFor="let item of (items | async)">
           <div>
-            <img src="{{item.product.url}}" width="400" height="600" alt="{{item.product.name}}"/>
+            <a routerLink="../product/{{item.product.id}}">
+              <img src="{{item.product.url}}" width="400" height="600" alt="{{item.product.name}}"/>
+            </a>
           </div>
           <div>
-            <h3>{{item.product.name}}</h3>
+            <h3>
+              <a routerLink="../product/{{item.product.id}}">
+                {{item.product.name}}
+              </a>
+            </h3>
             <p>Price: {{item.product.price | currency}}</p>
             <form ngNativeValidate (submit)="onSubmit($event, item.product, productAmount.value)">
               <fieldset>
