@@ -29,4 +29,8 @@ export class CartComponent implements OnInit {
     this.cartService.updateItem(product, parseInt(amount));
   }
 
+  removeItem(product: Product) {
+    this.cartService.updateItem(product, 0);
+  }
+
 }

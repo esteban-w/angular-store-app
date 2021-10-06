@@ -47,6 +47,11 @@ button[disabled] {
   opacity: 0.7;
 }
 
+button.btn-secondary {
+  background-color: #ccc;
+  color: #333;
+}
+
 a {
   color: #0058f9;
   font-weight: bold;

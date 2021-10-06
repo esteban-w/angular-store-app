@@ -18,3 +18,7 @@
 .cart-container > section:first-child ul li input {
   width: 70px;
 }
+
+.cart-container > section ul form button  {
+  margin-right: 5px;
+}
