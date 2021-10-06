@@ -58,6 +58,7 @@ strong {
 
 img {
   height: auto;
+  vertical-align: top;
   width: 100%;
 }
 
@@ -142,4 +143,25 @@ small {
 
 input.ng-invalid:focus + .input-error {
   display: block;
+}
+
+.product-added {
+  border: 1px solid green;
+  display: block;
+  position: relative;
+}
+
+.product-added::before {
+  background-color: darkseagreen;
+  border: 1px solid green;
+  border-width: 0 0 1px 1px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  content: attr(data-added-label);
+  color: green;
+  display: block;
+  padding: 4px 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }

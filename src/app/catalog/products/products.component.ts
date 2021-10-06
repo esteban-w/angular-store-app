@@ -10,6 +10,7 @@ import { Observable } from "rxjs";
 })
 export class ProductsComponent implements OnInit {
   products$: Observable<Product[]>;
+  productAdded: number | undefined;
 
   constructor(
     private productService: ProductService
@@ -18,6 +19,10 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  setProductAdded(id: number) {
+    this.productAdded = id;
   }
 
 }

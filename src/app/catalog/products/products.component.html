@@ -3,7 +3,9 @@
   <ul>
     <li *ngFor="let product of (products$ | async)">
       <div>
-        <a routerLink="product/{{product.id}}">
+        <a routerLink="product/{{product.id}}"
+           [class.product-added]="productAdded == product.id"
+           [attr.data-added-label]="(productAdded == product.id) && 'Added'">
           <img src="{{product.url}}" width="400" height="600" alt="{{product.name}}"/>
         </a>
       </div>
@@ -12,7 +14,7 @@
           <a routerLink="product/{{product.id}}">{{product.name}}</a>
         </h3>
         <p>{{product.price | currency}}</p>
-        <app-add-product [product]="product"></app-add-product>
+        <app-add-product [product]="product" (productAdded)="setProductAdded($event)"></app-add-product>
       </div>
     </li>
   </ul>

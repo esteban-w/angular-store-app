@@ -12,6 +12,7 @@ import { map } from 'rxjs/operators'
 })
 export class ProductComponent implements OnInit {
   product$: Observable<Product | undefined>;
+  productAdded: number | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,6 +26,10 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  setProductAdded(id: number) {
+    this.productAdded = id;
   }
 
 }

@@ -2,13 +2,16 @@
   <h1>Product</h1>
   <div *ngFor="let product of [product$ | async]">
     <div>
-      <img src="{{product?.url}}" width="400" height="600" alt="{{product?.name}}"/>
+      <div [class.product-added]="productAdded == product?.id"
+           [attr.data-added-label]="(productAdded == product?.id) && 'Added'">
+        <img src="{{product?.url}}" width="400" height="600" alt="{{product?.name}}"/>
+      </div>
     </div>
     <article>
       <h2>{{product?.name}}</h2>
       <p>{{product?.price | currency}}</p>
       <p>{{product?.description}}</p>
-      <app-add-product [product]="product"></app-add-product>
+      <app-add-product [product]="product" (productAdded)="setProductAdded($event)"></app-add-product>
       <a routerLink="/">Back to product list</a>
     </article>
   </div>
