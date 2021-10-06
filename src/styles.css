@@ -32,7 +32,12 @@ input {
 }
 
 input.ng-invalid.ng-dirty {
+  background-color: #ffe5e5;
   border-color: red;
+}
+
+input.ng-invalid.ng-dirty:focus-visible {
+  outline: red solid 1px;
 }
 
 button {
