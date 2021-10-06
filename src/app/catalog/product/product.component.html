@@ -11,7 +11,7 @@
       <h2>{{product?.name}}</h2>
       <p>{{product?.price | currency}}</p>
       <p>{{product?.description}}</p>
-      <app-add-product [product]="product" (productAdded)="setProductAdded($event)"></app-add-product>
+      <app-add-product [product]="product" (productAdded)="productAdded = $event"></app-add-product>
       <a routerLink="/">Back to product list</a>
     </article>
   </div>

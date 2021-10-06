@@ -28,8 +28,4 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  setProductAdded(id: number) {
-    this.productAdded = id;
-  }
-
 }
